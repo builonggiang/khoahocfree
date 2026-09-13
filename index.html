@@ -31,23 +31,21 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="text-blue-600 font-medium">Trang chủ</a>
-                    <a href="#danhmuc" class="text-gray-600 hover:text-blue-600">Danh mục</a>
-                    <a href="#kho-khoa-hoc" class="text-gray-600 hover:text-blue-600">Khóa Học</a>
-                    <a href="#kho-ebook" class="text-gray-600 hover:text-blue-600">Ebook THPT</a>
+                    <a href="#kho-khoa-hoc" class="text-gray-600 hover:text-blue-600">Khóa Học Premium</a>
+                    <a href="#kho-ebook" class="text-gray-600 hover:text-blue-600">Kho Ebook THPT</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Header & Thanh Tìm Kiếm -->
+    <!-- Header & Search -->
     <header class="bg-blue-600 mt-16 py-20 text-center">
         <div class="max-w-3xl mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Tìm kiếm tài liệu học tập & kỹ năng</h1>
-            <p class="text-blue-100 mb-8 text-lg">Hàng ngàn tài liệu THPT, Đại học, Tiếng Anh và Kỹ năng chuyên môn</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Kho tài liệu học tập & kỹ năng</h1>
+            <p class="text-blue-100 mb-8 text-lg">Hàng ngàn khóa học chất lượng cao và Ebook ôn thi THPT & ĐGNL</p>
             
             <div class="relative bg-white rounded-lg shadow-lg flex items-center p-2">
                 <i class="fa-solid fa-magnifying-glass text-gray-400 text-xl ml-3"></i>
-                <!-- Đã thêm ID và sự kiện oninput cho thanh tìm kiếm -->
                 <input type="text" id="searchInput" oninput="searchData()" class="w-full py-3 px-4 outline-none text-lg text-gray-700" placeholder="Nhập tên khóa học, môn học, tài liệu...">
                 <button onclick="searchData()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition duration-200">
                     Tìm kiếm
@@ -56,258 +54,165 @@
         </div>
     </header>
 
-    <!-- Khám Phá Danh Mục -->
-    <section id="danhmuc" class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold mb-8 text-gray-800 border-l-4 border-blue-600 pl-3">Khám phá Danh Mục</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            
-            <div onclick="goToSection('kho-ebook', 'lop12', 'ebook')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-school text-green-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Tài liệu THPT</h3>
-                <p class="text-gray-500 text-sm">Toán, Lý, Hóa, Sinh, Văn, Anh...</p>
-            </div>
-
-            <div onclick="goToSection('kho-khoa-hoc', 'dai-hoc', 'course')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-graduation-cap text-purple-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Đại Học</h3>
-                <p class="text-gray-500 text-sm">Đại cương, Đề test trắc nghiệm...</p>
-            </div>
-
-            <div onclick="goToSection('kho-khoa-hoc', 'it-vp', 'course')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-laptop-code text-blue-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Công Nghệ Thông Tin</h3>
-                <p class="text-gray-500 text-sm">Lập trình C++, Code nền tảng...</p>
-            </div>
-
-            <div onclick="goToSection('kho-khoa-hoc', 'ta-toeic', 'course')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-earth-americas text-red-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Ngoại Ngữ</h3>
-                <p class="text-gray-500 text-sm">Tài liệu luyện thi TOEIC, Tiếng Anh...</p>
-            </div>
-
-            <div onclick="goToSection('kho-khoa-hoc', 'thiet-ke', 'course')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-palette text-pink-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Thiết Kế</h3>
-                <p class="text-gray-500 text-sm">Canva, Capcut, Autocad, Video...</p>
-            </div>
-
-            <div onclick="goToSection('kho-khoa-hoc', 'it-vp', 'course')" class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100 cursor-pointer">
-                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-file-excel text-yellow-600 text-xl"></i></div>
-                <h3 class="font-bold text-lg mb-2">Tin học Văn phòng</h3>
-                <p class="text-gray-500 text-sm">Khóa Học MOS 2019 Chuyên Sâu...</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Kho Khóa Học -->
-    <section id="kho-khoa-hoc" class="max-w-7xl mx-auto px-4 py-8">
-        <h2 class="text-2xl font-bold mb-8 text-gray-800 border-l-4 border-blue-600 pl-3">Kho Khóa Học Premium</h2>
+    <!-- Kho Khóa Học Premium -->
+    <section id="kho-khoa-hoc" class="max-w-7xl mx-auto px-4 py-8 mt-8">
+        <h2 class="text-2xl font-bold mb-8 text-gray-800 border-l-4 border-blue-600 pl-3">Khóa Học Premium</h2>
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             
+            <!-- Tabs Khóa Học -->
             <div id="course-tabs-nav" class="flex flex-wrap gap-4 border-b border-gray-200 mb-6 pb-2">
                 <button class="px-2 pb-2 course-tab-btn course-tab-active" onclick="openCourseTab('ta-toeic')">Tiếng Anh & TOEIC</button>
                 <button class="px-2 pb-2 course-tab-btn text-gray-500 hover:text-blue-600" onclick="openCourseTab('thiet-ke')">Thiết kế & Video</button>
                 <button class="px-2 pb-2 course-tab-btn text-gray-500 hover:text-blue-600" onclick="openCourseTab('it-vp')">Lập trình & Tin học</button>
-                <button class="px-2 pb-2 course-tab-btn text-gray-500 hover:text-blue-600" onclick="openCourseTab('dai-hoc')">Đại học & Bộ môn khác</button>
+                <button class="px-2 pb-2 course-tab-btn text-gray-500 hover:text-blue-600" onclick="openCourseTab('dai-hoc')">Đại học & Đại cương</button>
             </div>
 
-            <!-- TAB 1: TIẾNG ANH & TOEIC -->
+            <!-- Tab 1: Tiếng Anh & TOEIC -->
             <div id="ta-toeic" class="course-tab-content active grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Data Item (Đã thêm class "searchable-item") -->
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Ngữ pháp Tiếng Anh trọn đời cô VMP</h3>
                     </div>
-                    <!-- CODE XỬ LÝ AFFILIATE CHUẨN XÁC NẰM Ở onclick CỦA NÚT NÀY -->
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1t5H09JaPXeL3s1ZRChvs8egr0LHO91O4HK6C-0mbgs8/edit?gid=0#gid=0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1t5H09JaPXeL3s1ZRChvs8egr0LHO91O4HK6C-0mbgs8/edit?gid=0#gid=0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">21 Ngày xây nền tiếng Anh cô Phạm Liệu</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/12BBsfIJrwdTtIbfJaFX0r7DY2ErzKaEhfzdUILQ04L4/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/12BBsfIJrwdTtIbfJaFX0r7DY2ErzKaEhfzdUILQ04L4/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">48 Ngày Lấy Gốc Tiếng Anh</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/18UG8ZNKTOWHISadX153a2VeKc1Hh_49TMZdWwqLhZgE/edit?gid=0#gid=0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/18UG8ZNKTOWHISadX153a2VeKc1Hh_49TMZdWwqLhZgE/edit?gid=0#gid=0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
-                
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">BÍ QUYẾT CHINH PHỤC TOEIC 500+</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1LRbMlJtfWJSGFYmAIgZDbdlPeDrBTm2p?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1LRbMlJtfWJSGFYmAIgZDbdlPeDrBTm2p?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Luyện thi TOEIC cho người mất gốc (Udemy)</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1tKlPLkAZvYoMuXv2B1fCWy_tHukNw08B?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1tKlPLkAZvYoMuXv2B1fCWy_tHukNw08B?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
-                        <h3 class="font-bold text-gray-800 text-md mb-2">Toeic Cô Vũ Mai Phương - Xóa Mù Cấp Tốc</h3>
+                        <h3 class="font-bold text-gray-800 text-md mb-2">Toeic Cô Vũ Mai Phương - Xóa Mù Tiếng Anh</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1m8EP4MQRqhgKBBVNSMwbp-al0wbrHARverPPaeXIYVs/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1m8EP4MQRqhgKBBVNSMwbp-al0wbrHARverPPaeXIYVs/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
-                        <h3 class="font-bold text-gray-800 text-md mb-2">Combo 3 Khóa TOEIC Từ Mất Gốc Đến Chuyên Sâu 0 - 800+ Prep vn</h3>
+                        <h3 class="font-bold text-gray-800 text-md mb-2">Toeic VMP (Tổng hợp)</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1CM0nluRTLSOnEhW08UmAmCvSFHcyi2wn?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1nC0h3XzJNNmfTXHfbv6bBR7kl1iTGucR')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
+                </div>
+                <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
+                        <h3 class="font-bold text-gray-800 text-md mb-2">Combo 3 Khóa TOEIC Từ Mất Gốc Đến Chuyên Sâu</h3>
+                    </div>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1CM0nluRTLSOnEhW08UmAmCvSFHcyi2wn?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
             </div>
 
-            <!-- TAB 2: THIẾT KẾ & VIDEO -->
+            <!-- Tab 2: Thiết kế -->
             <div id="thiet-ke" class="course-tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Lộ Trình 100 Video Thiết Kế Với Canva</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1kVXJDmELl3h_F4kBsxnddfWoVFsH60K0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1kVXJDmELl3h_F4kBsxnddfWoVFsH60K0')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Khoá Canva Cơ Bản Đến Nâng Cao - Mọt Canva</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1XZ2ZVtAKIK465wS2FrQsNMUaZgB06zMB')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1XZ2ZVtAKIK465wS2FrQsNMUaZgB06zMB')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Khóa Học Capcut PC (Quạ HD)</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1ot_Daag94lAqKfNHszxaAalecMr7HPd7')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1ot_Daag94lAqKfNHszxaAalecMr7HPd7')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Tổng hợp AUTOCAD</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1G8VnpVN2ZGCrlLJButdGk3-CbUs2THaY')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1G8VnpVN2ZGCrlLJButdGk3-CbUs2THaY')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
             </div>
 
-            <!-- TAB 3: LẬP TRÌNH & TIN HỌC -->
+            <!-- Tab 3: IT -->
             <div id="it-vp" class="course-tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Nguyễn Vũ Coder - Lập Trình C++ Nền Tảng</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1xvV3DeAlplS-u4WuQQyd65RVg-8GaWnK?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1xvV3DeAlplS-u4WuQQyd65RVg-8GaWnK?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Trọn Bộ Khóa Học MOS 2019 Chuyên Sâu</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1tZfjbs4cjEhhKPg-v33DOO73VEeadr9dm373RV0ekYc/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/d/1tZfjbs4cjEhhKPg-v33DOO73VEeadr9dm373RV0ekYc/edit?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
             </div>
 
-            <!-- TAB 4: ĐẠI HỌC & KHÁC -->
+            <!-- Tab 4: Đại học -->
             <div id="dai-hoc" class="course-tab-content grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-green-600 bg-green-100 inline-block px-2 py-1 rounded mb-2">Google Drive</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Tài Liệu Tổng Ôn Các Môn Đại Cương Đại Học</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1OoUrTW6ebjkICJtG4GkJ2LgS-pm_4-Hp?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://drive.google.com/drive/folders/1OoUrTW6ebjkICJtG4GkJ2LgS-pm_4-Hp?usp=sharing')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-folder-open mr-1"></i> Mở thư mục</a>
                 </div>
-
                 <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-semibold text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded mb-2">Google Sheets</div>
                         <h3 class="font-bold text-gray-800 text-md mb-2">Ngân Hàng Đề Test & Trắc Nghiệm Đại Cương</h3>
                     </div>
-                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/u/0/d/1hXYaeEOI6aOQprly2yYuPz-OfCtO0y9N9uOUSlfM3JA/htmlview')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200">
-                        <i class="fa-solid fa-link mr-1"></i> Truy cập ngay
-                    </a>
+                    <a href="#" onclick="openAffiliateLink(event, 'https://docs.google.com/spreadsheets/u/0/d/1hXYaeEOI6aOQprly2yYuPz-OfCtO0y9N9uOUSlfM3JA/htmlview')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200"><i class="fa-solid fa-link mr-1"></i> Truy cập ngay</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kho Ebook THPT -->
+    <!-- KHO EBOOK THPT & ĐGNL -->
     <section id="kho-ebook" class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-l-4 border-blue-600 pl-3">Kho Ebook THPT</h2>
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 border-l-4 border-blue-600 pl-3">Kho Ebook THPT & ĐGNL</h2>
             
-            <div id="ebook-tabs-nav" class="flex space-x-6 border-b border-gray-200 mb-6">
-                <button class="pb-2 px-1 ebook-tab-btn ebook-tab-active" onclick="openEbookTab('lop12')">Lớp 12</button>
-                <button class="pb-2 px-1 ebook-tab-btn text-gray-500 hover:text-blue-600" onclick="openEbookTab('lop11')">Lớp 11</button>
-                <button class="pb-2 px-1 ebook-tab-btn text-gray-500 hover:text-blue-600" onclick="openEbookTab('lop10')">Lớp 10</button>
+            <div id="ebook-tabs-nav" class="flex flex-wrap gap-4 border-b border-gray-200 mb-6 pb-2">
+                <button class="px-2 pb-2 ebook-tab-btn ebook-tab-active" onclick="openEbookTab('ebook-toan')">Môn Toán</button>
+                <button class="px-2 pb-2 ebook-tab-btn text-gray-500 hover:text-blue-600" onclick="openEbookTab('ebook-van-anh')">Ngữ Văn & Tiếng Anh</button>
+                <button class="px-2 pb-2 ebook-tab-btn text-gray-500 hover:text-blue-600" onclick="openEbookTab('ebook-khtn')">Vật Lý - Hóa - Sinh</button>
+                <button class="px-2 pb-2 ebook-tab-btn text-gray-500 hover:text-blue-600" onclick="openEbookTab('ebook-khxh-dgnl')">Sử - Địa & ĐGNL</button>
             </div>
 
-            <!-- Ebook Lớp 12 -->
-            <div id="lop12" class="ebook-tab-content active grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="searchable-item p-4 border rounded-lg hover:border-blue-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-square-root-variable text-blue-500 text-xl w-8"></i> <span class="font-bold">Toán Học 12</span></div>
-                <div class="searchable-item p-4 border rounded-lg hover:border-blue-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-atom text-blue-500 text-xl w-8"></i> <span class="font-bold">Vật Lý 12</span></div>
-                <div class="searchable-item p-4 border rounded-lg hover:border-blue-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-flask text-blue-500 text-xl w-8"></i> <span class="font-bold">Hóa Học 12</span></div>
-                <div class="searchable-item p-4 border rounded-lg hover:border-blue-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-book text-blue-500 text-xl w-8"></i> <span class="font-bold">Ngữ Văn 12</span></div>
-            </div>
-
-            <!-- Ebook Lớp 11 -->
-            <div id="lop11" class="ebook-tab-content grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="searchable-item p-4 border rounded-lg hover:border-green-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-square-root-variable text-green-500 text-xl w-8"></i> <span class="font-bold">Toán Học 11</span></div>
-                <div class="searchable-item p-4 border rounded-lg hover:border-green-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-atom text-green-500 text-xl w-8"></i> <span class="font-bold">Vật Lý 11</span></div>
-            </div>
-
-            <!-- Ebook Lớp 10 -->
-            <div id="lop10" class="ebook-tab-content grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="searchable-item p-4 border rounded-lg hover:border-yellow-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-square-root-variable text-yellow-500 text-xl w-8"></i> <span class="font-bold">Toán Học 10</span></div>
-                <div class="searchable-item p-4 border rounded-lg hover:border-yellow-500 cursor-pointer transition flex items-center"><i class="fa-solid fa-book text-yellow-500 text-xl w-8"></i> <span class="font-bold">Ngữ Văn 10</span></div>
-            </div>
+            <div id="ebook-toan" class="ebook-tab-content active grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="ebook-van-anh" class="ebook-tab-content grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="ebook-khtn" class="ebook-tab-content grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+            <div id="ebook-khxh-dgnl" class="ebook-tab-content grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
         </div>
     </section>
 
@@ -318,71 +223,147 @@
 
     <!-- JAVASCRIPT XỬ LÝ TOÀN BỘ LOGIC -->
     <script>
-        // 1. CHUYỂN HƯỚNG AFFILIATE (TAB-UNDER) MẠNH MẼ NHẤT
+        // 1. CƠ SỞ DỮ LIỆU 68 EBOOK
+        const ebookData = [
+            // --- MÔN TOÁN ---
+            { category: 'ebook-toan', title: 'EBOOK HÀNH TRÌNH CHINH PHỤC TOÁN THỰC TẾ LỚP 12, THẦY ĐỖ VĂN ĐỨC', link: 'https://drive.google.com/open?id=13AcE6Qd8SaIuiaKVsC_UFAmF6GN86zs9&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK CHINH PHỤC TỔ HỢP XÁC SUẤT, THẦY ĐỖ VĂN ĐỨC', link: 'https://drive.google.com/open?id=1LjFpPwjaaLr6ezXQcFhnE4EpjpE2C9Ut&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK NẮM TRỌN HÌNH HỌC KHÔNG GIAN ĐẠO HÀM VÀ XÁC SUẤT, CÔ NGỌC HUYỀN LB', link: 'https://drive.google.com/open?id=1jewIuRvjEDSTPQZ7ezvqb66ZhW3KAzDZ&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK STEP 1 NỀN TẢNG TOÁN 12, CÔ NGỌC HUYỀN LB', link: 'https://drive.google.com/open?id=1ZcXGT3uSCQyqbz30naZOcUD56r-r4xCa&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK PHONG TOẢ HÀM SỐ, MAPSTUDY', link: 'https://drive.google.com/open?id=1LRCUB2OQErgBQ1uq4B2kD_bpfP-3_j7Y&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK PHONG TOẢ NGUYÊN HÀM TÍCH PHÂN TOÁN 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1-H4gwVtnBO7OS_51kRbUy_EQc9OMjJdv&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK PHONG TOẢ XÁC SUẤT THỐNG KÊ TOÁN 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1N3mW0niW_tQ7a27aEnciOFwGY932o0Ue&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK PHONG TOẢ TOẠ ĐỘ TRONG KHÔNG GIAN TOÁN 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1RMoOmVoyi6vqHf6kcEKcXE_FVJhRThP4&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK PHONG TOẢ TOÁN THỰC TẾ TOÁN 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1wityTAQXE9vUCvhjiYqh1iiT4JB3lZD1&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK TOÁN 12 HÀNH TRÌNH CHINH PHỤC TRI THỨC TẬP 1, THẦY NGUYỄN PHAN TIẾN', link: 'https://drive.google.com/open?id=1swJhZ2gI9h39_xMB5VuWOXCJTAKzvxvI&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK SỔ TAY TỔNG HỢP KIẾN THỨC MÔN TOÁN LỚP 12, THẦY NGUYỄN PHAN TIẾN', link: 'https://drive.google.com/open?id=1l3ISXkc-3S0ul-1PD1zH42BkFVQYjBuU&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK CHINH PHỤC TỪ A-Z - HÀM SỐ TOÁN, ANH GIÁO KID', link: 'https://drive.google.com/open?id=1MsstkhsWqev0BebthnbESnVDZTELC6VK&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK CHINH PHỤC TỪ A-Z NGUYÊN HÀM TÍCH PHÂN TOÁN 12, ANH GIÁO KID', link: 'https://drive.google.com/open?id=1uKndCL7McmmaxH1uTGHqSGM_-IHlwBc8&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK CHINH PHỤC TỪ A-Z XÁC SUẤT THỐNG KÊ TOÁN 12, ANH GIÁO KID', link: 'https://drive.google.com/open?id=1YTrmwqWSaJU1CaTa-7_UGGvFMTrYyxyX&usp=drive_copy' },
+            { category: 'ebook-toan', title: 'EBOOK CHINH PHỤC TỪ A-Z HÌNH OXYZ TOÁN 12, ANH GIÁO KID', link: 'https://drive.google.com/open?id=1hgYsUDHNOOcothA77XmhsapgUOnF6BAv&usp=drive_copy' },
+
+            // --- NGỮ VĂN & TIẾNG ANH ---
+            { category: 'ebook-van-anh', title: 'LỘ TRÌNH HỌC TẬP LIVE LUYỆN THI TOÀN DIỆN 2027 HỌC VĂN CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1pOsXUElwWxP5a8SrF_2Z6tp4ros01tLw&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK SỔ TAY KIẾN THỨC TIẾNG VIỆT, CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1oVdho8IftImG0dj3Is-Fj-qgxBcIZUBe&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK SỔ TAY ĐỀ TỰ LUYỆN NGỮ VĂN, CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1Tv1KRK_esXQVAfWWs-2YSyZ585PrC5pG&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK VĂN TẬP 1 NGOÀI KIA RỰC RỠ BAO NHIÊU, CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1uCb55vIxeF8BPOSdnwu7uDseMWH9P6XP&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK VĂN TẬP 2 BÊN TRONG TA RỘN RÃ THẾ NÀO, CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1Ctn6_IUlZezFR-ARjVsqCdWKTTZ7ZQ2t&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'THƯ KÊT GỬI HỌC VĂN CÔ SƯƠNG MAI', link: 'https://drive.google.com/open?id=1v6FhPZF0nYawQGcydzaOLslfVKq7TIRD&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK 8910 TN THPT LÝ THUYẾT NỀN TẢNG NGỮ VĂN 12, THẦY PHẠM MINH NHẬT', link: 'https://drive.google.com/open?id=1XQDCLA30VZuMexYU7iRp5Y02m60EkMpW&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK ĐỌC HIỂU NGỮ VĂN 12 X-FILE, THẦY PHẠM MINH NHẬT', link: 'https://drive.google.com/open?id=1Lj8OtHzbovp8PSlrnReot92NpKga20v2&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK TRỌNG TÂM KIẾN THỨC ÔN THI TN THPT MÔN TIẾNG ANH, CÔ TRANG ANH', link: 'https://drive.google.com/open?id=11XK-K1LYLFOZ3XDTqPSpCEFC8svbUGs0&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK 60 ĐỀ MINH HOẠ TỐT NGHIỆP THPT 2026 MÔN TIẾNG ANH, CÔ TRANG ANH', link: 'https://drive.google.com/open?id=1SZpXKYuQ62kywv6ZXWOv3cwSnoKZ_hcP&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK TỪ VỰNG ĐỌC HIỂU CHUYÊN SÂU MÔN TIẾNG ANH TẬP 2, CÔ PHẠM LIỄU', link: 'https://drive.google.com/open?id=16ewbLoCmlXFQ7-i-b7awdFxuACdcHZML&usp=drive_copy' },
+            { category: 'ebook-van-anh', title: 'EBOOK 15 PHÚT MỖI NGÀY NÂNG CẤP TỪ VỰNG IELTS, CÔ PHẠM LIỄU', link: 'https://drive.google.com/open?id=1zoj1KM2SGNz6mHafsNuAVKFFKhJaoedo&usp=drive_copy' },
+
+            // --- LÝ HÓA SINH ---
+            { category: 'ebook-khtn', title: 'EBOOK BẢN ĐỒ KIẾN THỨC VẬT LÝ 12 THEO SGK MỚI, MAPSTUDY', link: 'https://drive.google.com/open?id=1BK_T2aS_0vztYtYNv5bS-kM3iO0bmLxS&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK NHẬP MÔN VẬT LÝ 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1sgyQ6dW-2TkCL1KtzXwU9l1svA-J1lPZ&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK TINH HOA LÝ THUYẾT VẬT LÝ 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1v5hNpV1KOqp4zfH08KPShFVAwMwB4YBy&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK MÔ HÌNH THÍ NGHIỆM VẬT LÝ 12, MAPSTUDY', link: 'https://drive.google.com/open?id=1Vt04dV_AXrpinOy4k4lzvpLW9TT6Y7ed&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK 8910 TN THPT LÝ THUYẾT NỀN TẢNG VẬT LÝ 12, THẦY VŨ TUẤN ANH', link: 'https://drive.google.com/open?id=1oJ3vo6sdJ59vzWQqqB1GJwQKhM2kyIck&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK LIVE C VẬT LÝ 12 TẬP 1 VẬT LÝ NHIỆT, THẦY VŨ TUẤN ANH 2027', link: 'https://drive.google.com/open?id=1INhUuVi2a4HYs9dcEzwFNZQ5qdpxlrez&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK LIVE C VẬT LÝ 12 TẬP 2 KHÍ LÝ TƯỞNG, THẦY VŨ TUẤN ANH 2027', link: 'https://drive.google.com/open?id=10qY3IaIHvg5ed9IXKqdMX-17l4ciu4P4&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK SỔ TAY LÝ THUYẾT VẬT LÝ 10 11 12, IPCLASS', link: 'https://drive.google.com/open?id=1QUSU68_vEcVumvmp5EQERtDElox7nv0a&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK PHÁT TRIỂN NĂNG LỰC VẬT LÝ 12 TẬP 1 VẬT LÝ NHIỆT, KHÍ LÝ TƯỞNG, IPCLASS', link: 'https://drive.google.com/open?id=120NsBrCege4K-SOmPEVr4fqZIajLAyCx&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK PHÁT TRIỂN NĂNG LỰC VẬT LÝ 12 TẬP 2 TỪ TRƯỜNG VÀ VẬT LÝ HẠT NHÂN, IPCLASS', link: 'https://drive.google.com/open?id=1c8Sdb14hS5SrOdXJm4TrofVZ9uxwWC__&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK SỔ TAY CÔNG THỨC VẬT LÝ 12, THẦY VŨ HOÀNG QUÂN', link: 'https://drive.google.com/open?id=1kqFzcH_GuKw_7kkVyW28xEaHfB5DL75V&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK VẬT LÝ 12 TẬP 1 CHUYÊN ĐỀ VẬT LÝ NHIỆT VÀ KHÍ LÝ TƯỞNG, THẦY VŨ HOÀNG QUÂN', link: 'https://drive.google.com/open?id=1hqvGU9VrifPNEBx-4fZL3hjHVfPDcniz&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK VẬT LÝ 12 TẬP 2 CHUYÊN ĐỀ TỪ TRƯỜNG VÀ VẬT LÝ HẠT NHÂN, THẦY VŨ HOÀNG QUÂN', link: 'https://drive.google.com/open?id=1-kZ9RVyr08JZxqaeaO2PD43ZK-M-j1S7&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK TRẮC NGHIỆM ĐÚNG SAI VẬT LÝ 12, THẦY VŨ HOÀNG QUÂN', link: 'https://drive.google.com/open?id=1TwOyUktDTpvyEhHhXMCwPN8HK_n5pOr3&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK TUYỂN CHỌN BÀI TẬP ĐỊNH LƯỢNG THÍ NGHIỆM LÝ THẦY CHU VĂN BIÊN', link: 'https://drive.google.com/open?id=1jTC8CVzZWG8FpaoVDmGxJgIVGvUUIO2j&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK CẨM NANG KIẾN THỨC 12 MÔN HOÁ HỌC, THẦY NGUYỄN ANH PHONG', link: 'https://drive.google.com/open?id=1fRi03s1QYCL4zIF6t8f5YoYIjTv6zy7c&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK LÀM CHỦ KIẾN THỨC LỚP 12 MÔN HOÁ HỌC, THẦY NGUYỄN ANH PHONG', link: 'https://drive.google.com/open?id=1fjXk2SrefDA1xY2zpdjJM0HdYt_N47MD&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK HÀNH TRÌNH CHINH PHỤC HOÁ VÔ CƠ 12, THẦY PHẠM VĂN TRỌNG', link: 'https://drive.google.com/open?id=10Glm1oFrFDZaObGWFyfU89TK-ffYTYUm&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK HÀNH TRÌNH CHINH PHỤC HOÁ HỮU CƠ 12, THẦY PHẠM VĂN TRỌNG', link: 'https://drive.google.com/open?id=1NCWq343A3afMxbz-cZuAYByxkKrW9U_T&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK 15 NGÀY CHINH PHỤC ESTER VÀ LIPID, THẦY PHẠM THẮNG TYHH 2027', link: 'https://drive.google.com/open?id=10RRL80nxfVBUsTrLJaGs8z379QXW2knG&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK 7 NGÀY CHINH PHỤC CARBOHYDRATE, THẦY PHẠM THẮNG TYHH 2027', link: 'https://drive.google.com/open?id=1bGAl-IVMAeYI6d-OxmlnOgLmI-mYH3iX&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK TỔNG ÔN SINH HỌC TẬP 1, MOON 2027', link: 'https://drive.google.com/open?id=1c2MiDvRqawCoJspaA49K_2ucBhFGSHn-&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK TRỌNG TÂM LÝ THUYẾT TỐT NGHIỆP PT MÔN SINH HỌC, MOON 2027', link: 'https://drive.google.com/open?id=1156dCxWiW_DAJ6hHPxEKzS7Zpo7eRKdZ&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'PHÁC ĐỒ SINH - TUYỂN TẬP 30 ĐỀ SIÊU PHẨM, THẦY TRƯƠNG CÔNG KIÊN', link: 'https://drive.google.com/open?id=1whMd1Pb8k70hymHzNp9kznXvD7eOdXu7&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK SỔ TAY NHẬP MÔN SINH HỌC, CÔ NGUYỄN VŨ TRÀ MY', link: 'https://drive.google.com/open?id=1t9QuYqVp2ABGi3f30mS456miMJkUvc3o&usp=drive_copy' },
+            { category: 'ebook-khtn', title: 'EBOOK CHINH PHỤC CHUYÊN ĐỀ SINH HỌC 12, CÔ NGUYỄN VŨ TRÀ MY', link: 'https://drive.google.com/open?id=1PDoi4mQMnOPpdcQ-koz3KVCTKOGJq1wH&usp=drive_copy' },
+
+            // --- SỬ, ĐỊA & ĐGNL ---
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK 8910 TN THPT LÝ THUYẾT NỀN TẢNG LỊCH SỬ 12, CÔ NGUYỄN HƯƠNG SEN', link: 'https://drive.google.com/open?id=1riQwgXO7A0EYCVGtOzMY1JQh0qp62_NI&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LIVE C KIẾN THỨC CHUYÊN SÂU MÔN LỊCH SỬ, CÔ NGUYỄN HƯƠNG SEN', link: 'https://drive.google.com/open?id=1igeiuNKF79Fv3RMkjdScd9BBq2MLFjZm&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'THƯ GỬI CHÀO MỪNG HỌC SINH TEAM ĐỊA LÝ THẦY TÀI', link: 'https://drive.google.com/open?id=1R8l9gKbuohDQ8ICfVubvlK2YRCy6XNMp&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN THI TOÀN DIỆN ĐỊA LÍ XUẤT PHÁT SỚM, THẦY TRẦN VĂN TÀI', link: 'https://drive.google.com/open?id=1P6841P_qaw-O7t3UgoxKtJy8eAfq_oN7&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK 8910 TN THPT LÝ THUYẾT NỀN TẢNG ĐỊA LÝ 12, CÔ HOÀNG THỊ MAI ANH', link: 'https://drive.google.com/open?id=1b5mkKuv_oVPuG-xMvWVl-z038G1bTNWt&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN ĐỀ THỰC CHIẾN ĐGNL HSA PHẦN ĐỊNH LƯỢNG, HSA EDU', link: 'https://drive.google.com/open?id=1yIZugkL1gOkqzvU4pQbJ9VYActVjzs2E&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN ĐỀ THỰC CHIẾN ĐGNL HSA PHẦN ĐỊNH TÍNH, HSA EDU', link: 'https://drive.google.com/open?id=1y4e7asqraBD1nndRxiO5VQufABZ5A6v7&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN ĐỀ THỰC CHIẾN ĐGNL HSA PHẦN TIẾNG ANH, HSA EDU', link: 'https://drive.google.com/open?id=13OxXIjFqZSOzunOXcbaC_LlSKOvjkRQk&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN ĐỀ THỰC CHIẾN ĐGNL HSA PHẦN KHOA HỌC, HSA EDU', link: 'https://drive.google.com/open?id=1MM-QnbMJdISbLcmkYdKme62qdueDBmpf&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK CÔNG PHÁ ĐỀ THI ĐGNL KỲ THI HSA 2027 PHẦN 1 ĐỊNH TÍNH, MAPSTUDY', link: 'https://drive.google.com/open?id=13MUwuO-jFZ1ZeFaXpSqhiXZu0tcDAsL5&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK LUYỆN THI ĐGNL ĐH QG HÀ NỘI HSA ĐỊNH LƯỢNG - ĐỊNH TÍNH, MAPSTUDY', link: 'https://drive.google.com/open?id=1sXr5DpdUsZFmX3BKxN6_wUB-THGtLKuN&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK 1000+ BÀI TOÁN TRỌNG TÂM LUYỆN THI 2027, HOCMAI (HSA, TSA, VACT)', link: 'https://drive.google.com/open?id=1a2Hh_s14FUUTQoiQnr6a2xDGhsp87dGZ&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK CHUYÊN ĐỀ TIẾNG VIỆT LUYỆN THI ĐGNL VACT, EMPIRE TEAM 2027', link: 'https://drive.google.com/open?id=1sQNn2qrbAVF5SKcioCH_gb7rvr9xr9yW&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK CHUYÊN ĐỀ TIẾNG ANH LUYỆN THI ĐGNL VACT, EMPIRE TEAM 2027', link: 'https://drive.google.com/open?id=1PhXniitLQHEMDBVXv5gc0-6Ddq6iPvZD&usp=drive_copy' },
+            { category: 'ebook-khxh-dgnl', title: 'EBOOK CHUYÊN ĐỀ TƯ DUY KHOA HỌC LUYỆN THI ĐGNL VACT, EMPIRE TEAM 2027', link: 'https://drive.google.com/open?id=13e35rfKgIa_CPeftSnQok-w4XAb8UdR4&usp=drive_copy' }
+        ];
+
+        // 2. HÀM TỰ ĐỘNG VẼ GIAO DIỆN EBOOK
+        function renderEbooks() {
+            ebookData.forEach(ebook => {
+                const container = document.getElementById(ebook.category);
+                if (container) {
+                    container.innerHTML += `
+                        <div class="searchable-item border rounded-lg p-4 hover:shadow-md transition bg-gray-50 flex flex-col justify-between">
+                            <div>
+                                <div class="text-xs font-semibold text-red-600 bg-red-100 inline-block px-2 py-1 rounded mb-2"><i class="fa-solid fa-file-pdf mr-1"></i> PDF / Drive</div>
+                                <h3 class="font-bold text-gray-800 text-sm mb-2">${ebook.title}</h3>
+                            </div>
+                            <a href="#" onclick="openAffiliateLink(event, '${ebook.link}')" class="mt-4 block w-full text-center bg-blue-50 hover:bg-blue-600 hover:text-white text-blue-600 font-medium py-2 rounded transition border border-blue-200 text-sm">
+                                <i class="fa-solid fa-download mr-1"></i> Tải tài liệu
+                            </a>
+                        </div>
+                    `;
+                }
+            });
+        }
+        window.onload = renderEbooks;
+
+        // 3. AFFILIATE SHOPEE (Chống chặn 100%)
         function openAffiliateLink(event, docUrl) {
             event.preventDefault(); 
             const shopeeLinks = ["https://s.shopee.vn/2VrSrwfvOT", "https://s.shopee.vn/20vCHHOIrs"];
             const randomLink = shopeeLinks[Math.floor(Math.random() * shopeeLinks.length)];
             
-            // Bước 1: Mở Tab mới chứa link Google Drive/Sheets của bạn
             window.open(docUrl, '_blank');
-            
-            // Bước 2: Chuyển thẳng trang hiện tại (Trang web này) sang Shopee
-            // Khách lấy xong tài liệu quay lại sẽ thấy Shopee của bạn. Không thể bị block!
             window.location.href = randomLink;
         }
 
-        // 2. THANH TÌM KIẾM THEO THỜI GIAN THỰC
+        // 4. THANH TÌM KIẾM
         function searchData() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let items = document.querySelectorAll('.searchable-item');
 
             if (input.trim() === "") {
-                // Nếu người dùng xóa ô tìm kiếm -> Khôi phục lại trạng thái Tab ban đầu
                 document.getElementById('course-tabs-nav').style.display = 'flex';
                 document.getElementById('ebook-tabs-nav').style.display = 'flex';
-                
-                // Mở lại các tab đang Active
                 document.querySelector('.course-tab-active').click();
                 document.querySelector('.ebook-tab-active').click();
             } else {
-                // Nếu đang gõ tìm kiếm -> Hiển thị TẤT CẢ nội dung ở mọi Tab để lọc
-                document.getElementById('course-tabs-nav').style.display = 'none'; // Giấu nút Tab đi
+                document.getElementById('course-tabs-nav').style.display = 'none';
                 document.getElementById('ebook-tabs-nav').style.display = 'none';
-
                 document.querySelectorAll('.course-tab-content, .ebook-tab-content').forEach(container => {
-                    container.style.display = 'grid'; // Bật hết khung chứa
+                    container.style.display = 'grid'; 
                 });
-
-                // Chạy vòng lặp kiểm tra từng khóa học
                 items.forEach(item => {
                     let title = item.innerText.toLowerCase();
                     if (title.includes(input)) {
-                        item.style.display = 'flex'; // Trùng khớp thì hiện
+                        item.style.display = 'flex'; 
                     } else {
-                        item.style.display = 'none'; // Không khớp thì ẩn
+                        item.style.display = 'none'; 
                     }
                 });
             }
         }
 
-        // 3. XỬ LÝ BẤM VÀO DANH MỤC THÌ CUỘN XUỐNG VÀ CHUYỂN TAB
-        function goToSection(sectionId, tabId, type) {
-            // Cuộn mượt mà xuống phần đó
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-            
-            // Mở đúng Tab được chọn
-            if(type === 'course') {
-                openCourseTab(tabId);
-            } else if(type === 'ebook') {
-                openEbookTab(tabId);
-            }
-        }
-
-        // 4. XỬ LÝ CHUYỂN TAB KHÓA HỌC
+        // 5. ĐỔI TAB KHÓA HỌC / EBOOK
         function openCourseTab(tabId) {
             document.querySelectorAll('.course-tab-btn').forEach(btn => {
-                btn.classList.remove('course-tab-active', 'border-blue-500', 'text-blue-600', 'font-semibold');
+                btn.classList.remove('course-tab-active', 'text-blue-600', 'font-semibold');
                 btn.classList.add('text-gray-500');
             });
             document.querySelectorAll('.course-tab-content').forEach(content => {
@@ -391,16 +372,13 @@
             });
             event.target.classList.add('course-tab-active');
             event.target.classList.remove('text-gray-500');
-            
-            let tabToOpen = document.getElementById(tabId);
-            tabToOpen.classList.add('active');
-            tabToOpen.style.display = 'grid';
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).style.display = 'grid';
         }
 
-        // 5. XỬ LÝ CHUYỂN TAB EBOOK
         function openEbookTab(tabId) {
             document.querySelectorAll('.ebook-tab-btn').forEach(btn => {
-                btn.classList.remove('ebook-tab-active', 'border-blue-500', 'text-blue-600', 'font-semibold');
+                btn.classList.remove('ebook-tab-active', 'text-blue-600', 'font-semibold');
                 btn.classList.add('text-gray-500');
             });
             document.querySelectorAll('.ebook-tab-content').forEach(content => {
@@ -409,10 +387,8 @@
             });
             event.target.classList.add('ebook-tab-active');
             event.target.classList.remove('text-gray-500');
-            
-            let tabToOpen = document.getElementById(tabId);
-            tabToOpen.classList.add('active');
-            tabToOpen.style.display = 'grid';
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).style.display = 'grid';
         }
     </script>
 </body>
